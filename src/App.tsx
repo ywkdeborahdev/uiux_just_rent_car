@@ -7,7 +7,6 @@ function App() {
 
     <div>
       <Header />
-      <text>Just Rent Car</text>
     </div>
   )
 }

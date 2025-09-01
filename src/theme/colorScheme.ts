@@ -28,7 +28,7 @@ type JustRentColors = {
 const justRentColors: JustRentColors = {
     primary: {
         main: '#3A4143',
-        light: '#676e70',
+        light: '#E0E0E0',
         dark: '#131b1c',
     },
     secondary: {

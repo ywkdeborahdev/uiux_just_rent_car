@@ -1,14 +1,14 @@
 /* Header */
 .main-header {
-    background-color: #3A4143;
-    color: #fff;
-    padding: 1rem 0;
+    padding: 0.5rem;
+    color: #577A7F;
 }
 
 .main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 36px;
 }
 
 .logo {
@@ -16,12 +16,19 @@
     font-weight: 700;
 }
 
+
+#langEng {
+    margin-left: 0;
+}
+
 .main-nav a {
-    color: #fff;
+    color: #577A7F;
     text-decoration: none;
     margin-left: 1.5rem;
     font-size: 0.9rem;
 }
+
+
 
 .login-btn {
     border: 1px solid #fff;
