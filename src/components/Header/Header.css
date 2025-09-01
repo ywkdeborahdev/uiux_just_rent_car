@@ -1,0 +1,30 @@
+/* Header */
+.main-header {
+    background-color: #3A4143;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.login-btn {
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
