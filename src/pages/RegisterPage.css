@@ -68,24 +68,26 @@
 
 /* Main input fields take up the most space */
 .main-input {
-    flex-grow: 1;
+    width: 500px;
 }
 
 /* Phone input group */
 .phone-input-group {
     display: flex;
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    margin: 0;
 }
 
 .phone-input-group select {
     border-right: none;
     border-radius: 4px 0 0 4px;
     background-color: var(--background-paper);
+    width: 120px;
 }
 
 .phone-input-group input {
     border-radius: 0 4px 4px 0;
-    width: 100%;
+    width: 380px;
 }
 
 /* Verification code column */
@@ -96,7 +98,7 @@
 }
 
 .get-code-button {
-    margin: 0 0 0 10rem;
+    margin: 0 0 0 2rem;
     padding: 0.8rem 1rem;
     border: 0px solid var(--divider);
     background-color: var(--background-paper);
