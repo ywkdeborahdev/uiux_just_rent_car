@@ -54,7 +54,22 @@
     /* Override default lower opacity for disabled buttons */
 }
 
+.welcome-message {
+    color: white;
+    margin-left: 1.5rem;
+    font-size: 0.9rem;
+}
 
+.logout-btn {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-left: 1.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
 
 .login-btn {
     border: 1px solid #fff;

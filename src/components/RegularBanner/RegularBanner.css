@@ -1,0 +1,12 @@
+.shared-banner {
+    position: relative;
+    height: 24vh;
+    /* 24% of the viewport height */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}

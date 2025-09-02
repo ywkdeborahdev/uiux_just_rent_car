@@ -3,10 +3,22 @@
         "carRental": "Car Rental",
         "otherServices": "Other Services",
         "contactUs": "Contact Us",
-        "login": "Login"
+        "login": "Login",
+        "logout": "Logout",
+        "Welcome": "Welcome"
     },
     "mainPage": {
         "title": "Main Page Content",
         "languageDisplay": "The language chosen in the header is: "
+    },
+    "loginPage": {
+        "bannerTitle": "Welcome Back",
+        "formTitle": "Member Login",
+        "usernameLabel": "Username",
+        "passwordLabel": "Password",
+        "buttonText": "Login",
+        "signupPrompt": "Not yet our member?",
+        "signupLink": "Sign up",
+        "errorMessage": "Invalid username or password. Please try again."
     }
 }

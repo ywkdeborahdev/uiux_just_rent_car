@@ -3,10 +3,22 @@
         "carRental": "汽車租賃",
         "otherServices": "其他服務",
         "contactUs": "聯絡我們",
-        "login": "登入"
+        "login": "登入",
+        "logout": "登出",
+        "Welcome": "歡迎"
     },
     "mainPage": {
         "title": "主頁內容",
         "languageDisplay": "在標頭中選擇的語言是: "
+    },
+    "loginPage": {
+        "bannerTitle": "歡迎回來",
+        "formTitle": "會員登入",
+        "usernameLabel": "用戶名",
+        "passwordLabel": "密碼",
+        "buttonText": "登入",
+        "signupPrompt": "還不是會員？",
+        "signupLink": "立即註冊",
+        "errorMessage": "用戶名或密碼無效。請再試一次。"
     }
 }

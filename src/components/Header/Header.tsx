@@ -1,6 +1,8 @@
 import React, { type Dispatch, type SetStateAction } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css'; // Make sure this path is correct
 import { justRentColors } from '../../theme/colorScheme';
+import { useAuth } from '../../context/AuthContext';
 
 // Define the type for the props the component will receive
 type HeaderProps = {
@@ -14,6 +16,9 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, t }) => {
     const headerStyle = {
         backgroundColor: justRentColors.primary.light, // Use the primary light color
     };
+
+    const { currentUser, logout } = useAuth();
+
     return (
         <header className="main-header" style={headerStyle}>
             <div className="container">
@@ -37,7 +42,17 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, t }) => {
                     >
                         EN
                     </button>
-                    <a href="#" className="login-btn">{t('header.login')}</a>
+
+                    {
+                        currentUser ? (
+                            <>
+                                <span className="welcome-message">{t('header.Welcome')}, {currentUser.username}</span>
+                                <button onClick={logout} className="logout-btn">{t('header.logout')}</button>
+                            </>
+                        ) : (
+                            <Link to='/login' className="login-btn">{t('header.login')}</Link>
+                        )
+                    }
                 </nav>
             </div>
         </header>

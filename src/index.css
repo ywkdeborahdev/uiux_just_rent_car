@@ -1,10 +1,34 @@
 /* Reset default browser styles */
+
+:root {
+  /* Primary Colors */
+  --primary-main: #3A4143;
+  --primary-light: #E0E0E0;
+  /* Corrected value */
+  --primary-dark: #131b1c;
+
+  /* Secondary Colors */
+  --secondary-main: #68b652;
+  --secondary-light: #98e983;
+  --secondary-dark: #3a8728;
+
+  /* Text Colors */
+  --text-primary: #3A4143;
+  --text-secondary: #788185;
+  --text-disabled: #BCC2C4;
+
+  /* Other Colors */
+  --background-paper: #F2F4F5;
+  --divider: #d0d2d3;
+  --error-main: #ff7800;
+}
+
 body {
   margin: 0;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #e0e0e0;
+  background-color: var(--background-paper);
   /* Optional: Sets a background color from your theme */
 }
 
