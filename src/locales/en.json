@@ -20,5 +20,15 @@
         "signupPrompt": "Not yet our member?",
         "signupLink": "Sign up",
         "errorMessage": "Invalid username or password. Please try again."
+    },
+    "registerPage": {
+        "formTitle": "Register to Become a Member",
+        "nameLabel": "Name",
+        "emailLabel": "Email",
+        "phoneLabel": "Phone",
+        "usernameLabel": "Username",
+        "passwordLabel": "Password",
+        "getCode": "Get Code",
+        "registerButton": "Register"
     }
 }

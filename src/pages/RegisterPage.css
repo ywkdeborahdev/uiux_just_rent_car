@@ -1,0 +1,137 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: var(--background-paper);
+}
+
+.register-form {
+    background-color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+    /* Increased width for the new layout */
+}
+
+.register-form h2 {
+    color: var(--primary-main);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.title-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--divider);
+    margin-bottom: 2.5rem;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-row label {
+    color: var(--text-secondary);
+    width: 100px;
+    /* Fixed width for labels */
+    text-align: right;
+    margin-right: 1.5rem;
+    font-weight: 500;
+    flex-shrink: 0;
+    /* Prevent label from shrinking */
+}
+
+.form-row .input-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Adds space between items */
+}
+
+.form-row input,
+.form-row select {
+    padding: 0.8rem 1rem;
+    border: 0px solid var(--divider);
+    border-radius: 4px;
+    background-color: var(--background-paper);
+    font-size: 1rem;
+    box-sizing: border-box;
+    color: var(--text-primary);
+}
+
+/* Main input fields take up the most space */
+.main-input {
+    flex-grow: 1;
+}
+
+/* Phone input group */
+.phone-input-group {
+    display: flex;
+    flex-grow: 1;
+}
+
+.phone-input-group select {
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    background-color: var(--background-paper);
+}
+
+.phone-input-group input {
+    border-radius: 0 4px 4px 0;
+    width: 100%;
+}
+
+/* Verification code column */
+.verification-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.get-code-button {
+    margin: 0 0 0 10rem;
+    padding: 0.8rem 1rem;
+    border: 0px solid var(--divider);
+    background-color: var(--background-paper);
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    color: var(--text-secondary);
+}
+
+.code-input {
+    width: 200px;
+    /* Fixed width for the code input */
+}
+
+.register-button-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.register-button {
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: 4px;
+    /* Changed from pill shape to match login button */
+    background-color: var(--secondary-main);
+    /* Changed color */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: var(--secondary-dark);
+    /* Changed color */
+}

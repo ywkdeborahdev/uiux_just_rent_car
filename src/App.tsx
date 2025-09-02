@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage language={language} t={t} />} />
           <Route path="/login" element={<LoginPage t={t} />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/register" element={<RegisterPage t={t} />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

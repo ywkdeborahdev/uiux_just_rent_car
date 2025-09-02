@@ -2,6 +2,13 @@
 .main-header {
     padding: 0.5rem;
     color: #577A7F;
+
+    /* --- Add these properties for the sticky effect --- */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Ensures the header stays on top of other content */
 }
 
 .main-header .container {

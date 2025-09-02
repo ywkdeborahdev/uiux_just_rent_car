@@ -20,5 +20,15 @@
         "signupPrompt": "還不是會員？",
         "signupLink": "立即註冊",
         "errorMessage": "用戶名或密碼無效。請再試一次。"
+    },
+    "registerPage": {
+        "formTitle": "登記成為會員",
+        "nameLabel": "姓名",
+        "emailLabel": "電郵",
+        "phoneLabel": "電話",
+        "usernameLabel": "用戶名稱",
+        "passwordLabel": "密碼",
+        "getCode": "獲取驗證碼",
+        "registerButton": "登記"
     }
 }
