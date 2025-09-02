@@ -1,0 +1,12 @@
+{
+    "header": {
+        "carRental": "Car Rental",
+        "otherServices": "Other Services",
+        "contactUs": "Contact Us",
+        "login": "Login"
+    },
+    "mainPage": {
+        "title": "Main Page Content",
+        "languageDisplay": "The language chosen in the header is: "
+    }
+}

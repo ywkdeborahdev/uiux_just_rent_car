@@ -1,14 +1,30 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 // import './App.css'
 
-function App() {
-  return (
+import MainPage from './pages/MainPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import { useTranslation } from './hooks/useTranslation';
 
-    <div>
-      <Header />
-    </div>
-  )
+function App() {
+  const [language, setLanguage] = useState('Chinese');
+  const { t } = useTranslation(language);
+
+  return (
+    <BrowserRouter>
+      {/* The Header is placed outside <Routes> so it's shared on every page */}
+      <Header language={language} setLanguage={setLanguage} t={t} />
+
+      {/* The <Routes> component handles which page to show based on the URL */}
+      <Routes>
+        <Route path="/" element={<MainPage language={language} t={t} />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App

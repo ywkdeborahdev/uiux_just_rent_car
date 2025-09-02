@@ -28,6 +28,32 @@
     font-size: 0.9rem;
 }
 
+.main-nav .lang-switch {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.main-nav .lang-switch:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Style for the disabled language button */
+.main-nav .lang-switch:disabled {
+    background-color: #68b652;
+    /* Use secondary color to show it's active */
+    border-color: #68b652;
+    /* cursor: not-allowed; */
+    opacity: 1;
+    /* Override default lower opacity for disabled buttons */
+}
+
 
 
 .login-btn {

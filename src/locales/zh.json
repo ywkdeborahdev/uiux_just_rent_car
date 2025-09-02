@@ -1,0 +1,12 @@
+{
+    "header": {
+        "carRental": "汽車租賃",
+        "otherServices": "其他服務",
+        "contactUs": "聯絡我們",
+        "login": "登入"
+    },
+    "mainPage": {
+        "title": "主頁內容",
+        "languageDisplay": "在標頭中選擇的語言是: "
+    }
+}
