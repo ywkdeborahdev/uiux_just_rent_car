@@ -9,7 +9,49 @@
     },
     "mainPage": {
         "titleOne": "Rent car",
-        "titleTwo": "and drive"
+        "titleTwo": "and drive",
+        "filters": {
+            "brand": "Brand",
+            "model": "Model",
+            "price": "Price",
+            "seats": "Seats",
+            "transmission": "Transmission"
+        },
+        "carList": {
+            "sortBy": "Sort by Price",
+            "priceAsc": "Price: Low to High",
+            "priceDesc": "Price: High to Low",
+            "noResults": "Sorry, no cars match your criteria. Try changing or relaxing your filters for more options.",
+            "hot": "Hot",
+            "pickup": "Pickup",
+            "seats": "Seats",
+            "doors": "Doors",
+            "daily": "Daily",
+            "weekly": "Weekly",
+            "monthly": "Monthly",
+            "days": "days",
+            "deposit": "Deposit",
+            "tags": {
+                "pLicense": "P License",
+                "invoice": "Invoice",
+                "emergency": "Emergency",
+                "insurance": "Insurance"
+            },
+            "locations": {
+                "airport": "Airport",
+                "kwunTong": "Kwun Tong",
+                "westKowloon": "West Kowloon"
+            }
+        },
+        "priceFilter": {
+            "selectRentalType": "Select Rental Type",
+            "daily": "Daily",
+            "weekly": "Weekly",
+            "monthly": "Monthly",
+            "selectPriceRange": "Select Price Range",
+            "minPrice": "Min Price",
+            "maxPrice": "Max Price"
+        }
     },
     "loginPage": {
         "bannerTitle": "Welcome Back",

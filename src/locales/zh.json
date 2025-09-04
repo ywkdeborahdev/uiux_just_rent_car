@@ -9,7 +9,49 @@
     },
     "mainPage": {
         "titleOne": "租車去邊",
-        "titleTwo": "你話事"
+        "titleTwo": "你話事",
+        "filters": {
+            "brand": "品牌",
+            "model": "型號",
+            "price": "價格",
+            "seats": "座位",
+            "transmission": "傳動系統"
+        },
+        "carList": {
+            "sortBy": "價格排序",
+            "priceAsc": "價格: 由低至高",
+            "priceDesc": "價格: 由高至低",
+            "noResults": "抱歉，沒有符合要求的車款。改變或放寬篩選條件，將有更多車款選擇。",
+            "hot": "熱門",
+            "pickup": "提車地點",
+            "seats": "座位",
+            "doors": "車門",
+            "daily": "日租",
+            "weekly": "週租",
+            "monthly": "月租",
+            "days": "日",
+            "deposit": "按金",
+            "tags": {
+                "pLicense": "P牌支援",
+                "invoice": "發票",
+                "emergency": "緊急支援",
+                "insurance": "第三方保險"
+            },
+            "locations": {
+                "airport": "機場",
+                "kwunTong": "觀塘",
+                "westKowloon": "西九龍"
+            }
+        },
+        "priceFilter": {
+            "selectRentalType": "請選擇租賃方式",
+            "daily": "日租",
+            "weekly": "週租",
+            "monthly": "月租",
+            "selectPriceRange": "請選擇價格範圍",
+            "minPrice": "最低價",
+            "maxPrice": "最高價"
+        }
     },
     "loginPage": {
         "bannerTitle": "歡迎回來",

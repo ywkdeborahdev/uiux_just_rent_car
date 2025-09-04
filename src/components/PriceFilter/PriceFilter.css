@@ -1,0 +1,79 @@
+.price-filter-body {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 350px;
+    background-color: white;
+    border: 1px solid var(--divider);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.rental-type-selector,
+.price-range-selector {
+    margin-bottom: 1.5rem;
+}
+
+.rental-type-selector span,
+.price-range-selector span {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.options button {
+    flex-grow: 1;
+    padding: 0.6rem;
+    border: 1px solid var(--divider);
+    border-radius: 20px;
+    background-color: white;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.options button.active,
+.options button:hover {
+    background-color: var(--secondary-light);
+    border-color: var(--secondary-main);
+    color: var(--secondary-dark);
+    font-weight: bold;
+}
+
+/* Updated styles for price inputs */
+.price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-inputs input[type="number"] {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--divider);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1rem;
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+/* Hide arrows from number input for Chrome, Safari, Edge, Opera */
+.price-inputs input::-webkit-outer-spin-button,
+.price-inputs input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.price-inputs .separator {
+    color: var(--divider);
+    font-weight: bold;
+}

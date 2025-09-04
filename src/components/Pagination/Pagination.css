@@ -1,0 +1,46 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.pagination-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+}
+
+.page-item button {
+    padding: 0.7rem 1.1rem;
+    border: none;
+    background-color: #ffffff;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+    border-right: 1px solid var(--divider);
+}
+
+.page-item:last-child button {
+    border-right: none;
+}
+
+.page-item button:hover {
+    background-color: var(--background-paper);
+}
+
+.page-item.active button {
+    background-color: var(--secondary-main);
+    color: white;
+    font-weight: bold;
+}
+
+.page-item.disabled button {
+    color: #cccccc;
+    cursor: not-allowed;
+    background-color: #f9f9f9;
+}
