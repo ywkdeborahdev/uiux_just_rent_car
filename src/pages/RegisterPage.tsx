@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import * as bcrypt from 'bcrypt-ts';
 import RegularBanner from '../components/RegularBanner/RegularBanner';
+import FormInput from '../components/FormInput/FormInput';
+import VerificationInput from '../components/VerificationInput/VerificationInput';
+import PhoneInput from '../components/PhoneInput/PhoneInput';
 import './RegisterPage.css';
+
+
+import { useAuth } from '../context/AuthContext';
+import { members, type Member } from '../data/memberData';
 
 type RegisterPageProps = {
     t: (key: string) => string;
 };
 
+type FormErrors = {
+    [key: string]: string;
+};
+
 const RegisterPage: React.FC<RegisterPageProps> = ({ t }) => {
-    // State for each form field
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -19,69 +31,156 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ t }) => {
         password: '',
     });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { id, value } = e.target;
-        setFormData((prev) => ({ ...prev, [id]: value }));
+    const [errors, setErrors] = useState<FormErrors>({});
+
+    const { login } = useAuth();
+    const navigate = useNavigate();
+
+    const validate = (data: typeof formData, checkAllFields: boolean = false) => {
+        const newErrors: FormErrors = {};
+
+        if (checkAllFields) {
+            const requiredFields: (keyof typeof formData)[] = [
+                'name', 'email', 'emailCode', 'phone', 'phoneCode', 'username', 'password'
+            ];
+            requiredFields.forEach(field => {
+                if (!data[field]) {
+                    newErrors[field] = t('registerPage.errors.required');
+                }
+            });
+        }
+
+        if (data.email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                newErrors.email = t('registerPage.errors.invalidEmail');
+            }
+        }
+
+        if (data.emailCode && data.emailCode !== '000') {
+            newErrors.emailCode = t('registerPage.errors.invalidCode');
+        }
+
+        if (data.phone) {
+            const phoneRegex = /^[0-9]{8}$/;
+            if (!phoneRegex.test(data.phone)) {
+                newErrors.phone = t('registerPage.errors.invalidPhone');
+            }
+        }
+
+        if (data.phoneCode && data.phoneCode !== '000') {
+            newErrors.phoneCode = t('registerPage.errors.invalidCode');
+        }
+
+        return newErrors;
     };
 
-    const handleRegister = (e: React.FormEvent) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { id, value } = e.target;
+        const newFormData = { ...formData, [id]: value };
+        setFormData(newFormData);
+
+        const onTheFlyErrors = validate(newFormData, false);
+        setErrors(onTheFlyErrors);
+    };
+
+    const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Registering with data:', formData);
-        // Add registration logic here
+        const finalErrors = validate(formData, true);
+        setErrors(finalErrors);
+
+        if (Object.keys(finalErrors).length === 0) {
+            try {
+                const saltRounds = 10;
+                const hashedPassword = await bcrypt.hash(formData.password, saltRounds);
+
+                const newMember: Member = {
+                    id: members.length + 1,
+                    username: formData.username,
+                    email: formData.email,
+                    name: formData.name,
+                    phonePrefix: formData.phonePrefix,
+                    phone: formData.phone,
+                    password: hashedPassword,
+                };
+
+                members.push(newMember);
+                login(newMember);
+                navigate('/message', { state: { message: 'registerPage.successRegister' } });
+
+            } catch (error) {
+                console.error("Registration failed:", error);
+                setErrors({ ...errors, form: 'Registration failed. Please try again.' });
+            }
+        } else {
+            console.log('Form has errors, registration denied.');
+        }
     };
 
     return (
         <div>
             <RegularBanner />
             <div className="register-container">
-                <form className="register-form" onSubmit={handleRegister}>
+                <form className="register-form" onSubmit={handleRegister} noValidate>
                     <h2>{t('registerPage.formTitle')}</h2>
                     <hr className="title-divider" />
 
-                    {/* Name */}
-                    <div className="form-row">
-                        <label htmlFor="name">{t('registerPage.nameLabel')}</label>
-                        <input id="name" type="text" className="main-input" value={formData.name} onChange={handleChange} required />
-                    </div>
-
-                    {/* Email */}
-                    <div className="form-row">
-                        <label htmlFor="email">{t('registerPage.emailLabel')}</label>
-                        <input id="email" type="email" className="main-input" value={formData.email} onChange={handleChange} required />
-                        <div className="verification-group">
-                            <button type="button" className="get-code-button">{t('registerPage.getCode')}</button>
-                            <input id="emailCode" type="text" className="code-input" value={formData.emailCode} onChange={handleChange} required />
-                        </div>
-                    </div>
-
-                    {/* Phone */}
-                    <div className="form-row">
-                        <label htmlFor="phone">{t('registerPage.phoneLabel')}</label>
-                        <div className="phone-input-group">
-                            <select id="phonePrefix" value={formData.phonePrefix} onChange={handleChange}>
-                                <option value="+852">+852</option>
-                                <option value="+853">+853</option>
-                                <option value="+886">+886</option>
-                            </select>
-                            <input id="phone" type="tel" value={formData.phone} onChange={handleChange} required />
-                        </div>
-                        <div className="verification-group">
-                            <button type="button" className="get-code-button">{t('registerPage.getCode')}</button>
-                            <input id="phoneCode" type="text" className="code-input" value={formData.phoneCode} onChange={handleChange} required />
-                        </div>
-                    </div>
-
-                    {/* Username */}
-                    <div className="form-row">
-                        <label htmlFor="username">{t('registerPage.usernameLabel')}</label>
-                        <input id="username" type="text" className="main-input" value={formData.username} onChange={handleChange} required />
-                    </div>
-
-                    {/* Password */}
-                    <div className="form-row">
-                        <label htmlFor="password">{t('registerPage.passwordLabel')}</label>
-                        <input id="password" type="password" className="main-input" value={formData.password} onChange={handleChange} required />
-                    </div>
+                    <FormInput
+                        label={t('registerPage.nameLabel')}
+                        id="name"
+                        type="text"
+                        value={formData.name}
+                        handleChange={handleChange}
+                        handleBlur={() => { }}
+                        handleFocus={() => { }}
+                        error={errors.name}
+                    />
+                    <VerificationInput
+                        label={t('registerPage.emailLabel')}
+                        id="email"
+                        value={formData.email}
+                        codeValue={formData.emailCode}
+                        handleChange={handleChange}
+                        handleBlur={() => { }}
+                        handleFocus={() => { }}
+                        t={t}
+                        emailError={errors.email}
+                        codeError={errors.emailCode}
+                    />
+                    <PhoneInput
+                        label={t('registerPage.phoneLabel')}
+                        prefixId="phonePrefix"
+                        prefixValue={formData.phonePrefix}
+                        phoneId="phone"
+                        phoneValue={formData.phone}
+                        codeValue={formData.phoneCode}
+                        handleChange={handleChange}
+                        handleBlur={() => { }}
+                        handleFocus={() => { }}
+                        t={t}
+                        phoneError={errors.phone}
+                        codeError={errors.phoneCode}
+                    />
+                    <FormInput
+                        label={t('registerPage.usernameLabel')}
+                        id="username"
+                        type="text"
+                        value={formData.username}
+                        handleChange={handleChange}
+                        handleBlur={() => { }}
+                        handleFocus={() => { }}
+                        error={errors.username}
+                    />
+                    <FormInput
+                        label={t('registerPage.passwordLabel')}
+                        id="password"
+                        type="password"
+                        value={formData.password}
+                        handleChange={handleChange}
+                        handleBlur={() => { }}
+                        handleFocus={() => { }}
+                        error={errors.password}
+                    />
 
                     <div className="register-button-container">
                         <button type="submit" className="register-button">

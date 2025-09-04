@@ -10,7 +10,6 @@ import { useAuth } from '../context/AuthContext';
 
 
 const saltRounds = import.meta.env.VITE_SALT_ROUNDS;
-const saltPassword = import.meta.env.VITE_SALT_PASSWORD;
 
 type LoginPageProps = {
     t: (key: string) => string;
@@ -60,7 +59,6 @@ const LoginPage: React.FC<LoginPageProps> = ({ t }) => {
             <div className="login-container">
                 <form className="login-form" onSubmit={handleLogin}>
                     <h2>{t('loginPage.formTitle')}</h2>
-                    <text>{saltRounds}</text>
                     <div className="input-group">
                         <label htmlFor="username">{t('loginPage.usernameLabel')}</label>
                         <input

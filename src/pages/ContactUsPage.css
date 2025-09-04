@@ -1,0 +1,180 @@
+.contact-us-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3rem 2rem;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info-panel,
+.contact-form-panel {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info-panel {
+    flex: 1;
+    min-width: 360px;
+}
+
+.contact-info-panel h2 {
+    color: var(--primary-main);
+    margin-top: 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--secondary-main);
+    padding-bottom: 0.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.info-item .icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.info-item .details h3 {
+    margin: 0 0 0.2rem 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.info-item .details p {
+    margin: 0;
+    color: var(--text-secondary);
+    white-space: pre-line;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+}
+
+.map-image {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    /* margin-top: 1rem; */
+    border: 1px solid var(--divider);
+}
+
+/* --- Form Styles (Updated) --- */
+.contact-form-panel {
+    flex: 1.5;
+    min-width: 400px;
+}
+
+.contact-form-panel h2 {
+    text-align: center;
+    color: var(--primary-main);
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    /* For error message positioning */
+}
+
+.form-row label {
+    color: var(--text-secondary);
+    width: 80px;
+    /* Fixed width for labels */
+    text-align: right;
+    margin-right: 1.5rem;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--background-paper);
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.form-row textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.phone-input-group {
+    display: flex;
+    flex-grow: 1;
+}
+
+
+.phone-input-group select {
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    /* --- CHANGES START HERE --- */
+    /* Give the dropdown a fixed width */
+    flex-shrink: 0;
+    /* Prevent it from shrinking */
+    /* --- CHANGES END HERE --- */
+}
+
+#phonePrefix {
+    width: 100px;
+}
+
+.phone-input-group input {
+    border-radius: 0 4px 4px 0;
+    /* --- CHANGES START HERE --- */
+    width: 100%;
+    /* Allow the input to fill the remaining space */
+    /* --- CHANGES END HERE --- */
+}
+
+.error-text-contact {
+    position: absolute;
+    bottom: -2rem;
+    left: 125px;
+    /* Aligns with the start of the input fields */
+    color: #D32F2F;
+    font-size: 0.8rem;
+}
+
+.submit-button {
+    display: block;
+    width: auto;
+    min-width: 150px;
+    margin: 2.5rem auto 0 auto;
+    /* Center the button */
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--secondary-main);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--secondary-dark);
+}

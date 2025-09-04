@@ -6,7 +6,7 @@
     /* --- Add these properties for the sticky effect --- */
     position: sticky;
     top: 0;
-    width: 100%;
+    /* width: 100%; */
     z-index: 1000;
     /* Ensures the header stays on top of other content */
 }

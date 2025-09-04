@@ -5,19 +5,22 @@ import SearchBannerImg from '../../assets/SearchBanner.png';
 
 // The banner can take a title and an image URL as props
 type SearchBannerProps = {
-    title: string;
+    t: (key: string) => string;
+    title: any;
 };
 
-const SearchBanner: React.FC<SearchBannerProps> = ({ title }) => {
+const SearchBanner: React.FC<SearchBannerProps> = ({ title, t }) => {
     // Use inline style to set the background image dynamically
     const bannerStyle = {
         backgroundImage: `url(${SearchBannerImg})`,
     };
 
     return (
-        <div className="shared-banner" style={bannerStyle}>
+        <div className="search-banner" style={bannerStyle}>
             <div className="banner-overlay"></div>
-            <h1 className="banner-title">{title}</h1>
+            <h1 className="banner-title">{t(title.titleOne)}</h1>
+            <div className="empty-space"></div>
+            <h1 className="banner-title">{t(title.titleTwo)}</h1>
         </div>
     );
 };

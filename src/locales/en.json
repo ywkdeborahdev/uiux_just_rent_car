@@ -8,8 +8,8 @@
         "Welcome": "Welcome"
     },
     "mainPage": {
-        "title": "Main Page Content",
-        "languageDisplay": "The language chosen in the header is: "
+        "titleOne": "Rent car",
+        "titleTwo": "and drive"
     },
     "loginPage": {
         "bannerTitle": "Welcome Back",
@@ -29,6 +29,50 @@
         "usernameLabel": "Username",
         "passwordLabel": "Password",
         "getCode": "Get Code",
-        "registerButton": "Register"
+        "registerButton": "Register",
+        "resend": "Resend in {{seconds}}s",
+        "errors": {
+            "required": "Please fill in this box.",
+            "invalidEmail": "Please enter a valid email address.",
+            "invalidCode": "Invalid verification code.",
+            "invalidPhone": "Please enter a valid 8-digit phone number."
+        },
+        "successRegister": "You have been successfully registered! Please proceed to the main page."
+    },
+    "messagePage": {
+        "title": "Success!",
+        "defaultMessage": "Operation completed successfully.",
+        "continueButton": "Continue to Main Page"
+    },
+    "contactUsPage": {
+        "leftTitle": "Our Information",
+        "addressTitle": "Address",
+        "addressText": "123 Just Rent Avenue,\nCentral, Hong Kong",
+        "hoursTitle": "Operation Hours",
+        "hoursText": "Mon - Fri: 9:00 AM - 6:00 PM\nSat - Sun: 10:00 AM - 4:00 PM",
+        "phoneTitle": "Phone",
+        "phoneText": "(+852) 9123 4567",
+        "formTitle": "Send Us a Message",
+        "nameLabel": "Your Name",
+        "emailLabel": "Your Email",
+        "phoneLabel": "Your Phone",
+        "enquiryLabel": "Your Enquiry",
+        "submitButton": "Submit Enquiry",
+        "successSubmission": "Your enquiry has been sent successfully. We will get back to you shortly."
+    },
+    "otherServicesPage": {
+        "title": "Other Services",
+        "carParts": {
+            "title": "Car Parts",
+            "content": "We offer a wide range of high-quality car parts for various makes and models. Whether you need replacement parts or an upgrade, our extensive inventory ensures you find exactly what you need. All parts are sourced from reputable manufacturers and come with a warranty."
+        },
+        "documentHandling": {
+            "title": "Travel Department Document Handling",
+            "content": "Navigating the paperwork for travel and vehicle registration can be complex. Our experienced team handles all necessary documentation with the travel department, including licensing, registration renewal, and ownership transfers, ensuring a hassle-free process for you."
+        },
+        "carRepair": {
+            "title": "Car Repair Services",
+            "content": "Our certified mechanics provide comprehensive car repair and maintenance services. From routine oil changes and brake inspections to major engine repairs, we use state-of-the-art diagnostic equipment to ensure your vehicle is running safely and efficiently."
+        }
     }
 }

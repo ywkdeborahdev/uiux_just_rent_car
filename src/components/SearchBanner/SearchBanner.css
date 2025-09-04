@@ -1,7 +1,7 @@
-.shared-banner {
+.search-banner {
     position: relative;
-    height: 36vh;
-    /* 36% of the viewport height */
+    height: 32vh;
+    /* 32% of the viewport height */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -18,13 +18,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 .banner-title {
     position: relative;
     z-index: 2;
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: bold;
+}
+
+.empty-space {
+    width: 10rem;
 }

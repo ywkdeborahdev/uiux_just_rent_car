@@ -1,17 +1,18 @@
 import React from 'react';
+import SearchBanner from '../components/SearchBanner/SearchBanner';
 
 type MainPageProps = {
-    language: string;
     t: (key: string) => string; // Add 't' to the props
 };
 
-const MainPage: React.FC<MainPageProps> = ({ language, t }) => {
+const title: any = {
+    titleOne: "mainPage.titleOne",
+    titleTwo: "mainPage.titleTwo"
+}
+const MainPage: React.FC<MainPageProps> = ({ t }) => {
     return (
-        <div style={{ padding: '2rem', textAlign: 'center' }}>
-            <h1>{t('mainPage.title')}</h1>
-            <p style={{ fontSize: '1.2rem' }}>
-                {t('mainPage.languageDisplay')}<strong>{language}</strong>
-            </p>
+        <div>
+            <SearchBanner title={title} t={t} />
         </div>
     );
 };

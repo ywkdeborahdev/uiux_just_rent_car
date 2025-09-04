@@ -1,0 +1,64 @@
+.other-services-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.page-title {
+    text-align: center;
+    color: var(--primary-main);
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.accordion-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    /* Ensures the content slide effect works cleanly */
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+}
+
+.toggle-button {
+    border: none;
+    background: none;
+    font-size: 1.8rem;
+    color: var(--secondary-main);
+    transition: transform 0.3s ease;
+}
+
+.toggle-button.expanded {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    padding: 0 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-content.expanded {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    max-height: 500px;
+    /* Adjust if your content is longer */
+    transition: max-height 0.4s ease-in, padding 0.4s ease-in;
+}

@@ -1,0 +1,35 @@
+.phone-input-container {
+    position: relative;
+}
+
+.phone-input-group {
+    display: flex;
+}
+
+.phone-input-group select {
+    padding: 0.8rem 1rem;
+    border: 0px solid var(--divider);
+    border-radius: 4px 0 0 4px;
+    background-color: var(--background-paper);
+    font-size: 1rem;
+    color: var(--text-primary);
+    border-right: none;
+    width: 120px;
+}
+
+.phone-input-group input {
+    padding: 0.8rem 1rem;
+    border: 0px solid var(--divider);
+    border-radius: 0 4px 4px 0;
+    background-color: var(--background-paper);
+    font-size: 1rem;
+    color: var(--text-primary);
+    width: 380px;
+}
+
+/* Error text positioning for the main phone input */
+.phone-input-container .error-text {
+    position: absolute;
+    bottom: -2rem;
+    left: 0.2rem;
+}
