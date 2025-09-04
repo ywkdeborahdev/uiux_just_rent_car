@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, t }) => {
             <div className="container">
                 <h1 className="logo">JUST RENT</h1>
                 <nav className="main-nav">
-                    <a href="#">{t('header.carRental')}</a>
+                    <Link to='/'>{t('header.carRental')}</Link>
                     <Link to='/services'>{t('header.otherServices')}</Link>
                     <Link to='/contact-us'>{t('header.contactUs')}</Link>
                     <button
