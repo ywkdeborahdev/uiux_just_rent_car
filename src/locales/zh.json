@@ -116,5 +116,26 @@
             "title": "汽車維修服務",
             "content": "我們的認證技師提供全面的汽車維修和保養服務。從例行的更換機油和剎車檢查到重大的引擎維修，我們使用最先進的診斷設備，確保您的車輛安全高效地運行。"
         }
+    },
+    "carDetailPage": {
+        "carNotFound": "找不到車輛",
+        "bookNow": "立即預定",
+        "enquiry": "查詢",
+        "pickupLocation": "提車地點",
+        "fuelPolicy": "燃油政策",
+        "fuelPolicyText": "等量取還",
+        "otherSupport": "其他支援",
+        "supportClean": "出租前清洗乾淨及消毒車輛",
+        "supportLicenseFee": "無需承擔牌費費用",
+        "supportInsurance": "無需承擔保險費用",
+        "supportDashcam": "車輛行車記錄儀",
+        "supportAccessories": "電話支架、充電線",
+        "depositPolicy": "按金政策",
+        "depositPolicyFullLicense": "正式牌及25歲或以上:\n日、週租港幣$20,000,\n月租 港幣$22,000",
+        "depositPolicyPLicense": "P牌或25歲以下:\n日、週租港幣$30,000,\n月租 港幣$32,000",
+        "remarks": "備註",
+        "remarksText": "若有違例停車等告票，一般會於租車期後約一至兩個月收到，所以車行確認沒有告票後會退還剩餘押金。60日後無其他雜費或告票將會退回所有餘數。",
+        "transmissionAuto": "自動波",
+        "transmissionManual": "手動波"
     }
 }

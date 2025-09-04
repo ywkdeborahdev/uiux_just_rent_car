@@ -8,6 +8,7 @@ import ContactUsPage from './pages/ContactUsPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import MessagePage from './pages/MessagePage';
+import CarDetailPage from './pages/CarDetailPage';
 import { useTranslation } from './hooks/useTranslation';
 import { AuthProvider } from './context/AuthContext';
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/login" element={<LoginPage t={t} />} />
           <Route path="/register" element={<RegisterPage t={t} />} />
           <Route path="/message" element={<MessagePage t={t} />} />
+          <Route path="/car/:carId" element={<CarDetailPage t={t} />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

@@ -1,0 +1,189 @@
+.car-detail-container {
+    padding: 3rem 2rem;
+    background-color: var(--background-paper);
+}
+
+.car-detail-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Top Header --- */
+.car-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.car-detail-header h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
+.car-detail-header .car-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.car-detail-header .tag {
+    background-color: var(--secondary-main);
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* --- Main Body --- */
+.car-detail-body {
+    display: flex;
+    gap: 2rem;
+}
+
+/* --- Left Panel --- */
+.left-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-and-specs-grid {
+    display: flex;
+    gap: 2rem;
+    flex-grow: 1;
+}
+
+.info-section {
+    flex: 3;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.info-section p {
+    margin: 0 0 1rem 0;
+}
+
+.info-section strong {
+    color: var(--text-primary);
+}
+
+.support-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.support-section li {
+    margin-bottom: 0.3rem;
+    color: var(--secondary-dark);
+}
+
+.specs-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--text-primary);
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.spec-item svg {
+    width: 24px;
+    height: 24px;
+    color: var(--text-secondary);
+}
+
+.car-detail-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.book-now-btn,
+.enquiry-btn {
+    padding: 0.9rem 2.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.book-now-btn {
+    background-color: var(--cta-main);
+    color: white;
+    border: none;
+}
+
+.book-now-btn:hover {
+    background-color: var(--cta-secondary);
+}
+
+.enquiry-btn {
+    background-color: var(--secondary-main);
+    color: #ffffff;
+    border: none;
+}
+
+.enquiry-btn:hover {
+    background-color: var(--secondary-dark);
+    border-color: var(--text-secondary);
+}
+
+
+/* --- Right Panel --- */
+.right-panel {
+    flex: 1;
+    border-left: 1px solid var(--divider);
+    padding-left: 2rem;
+}
+
+.pricing-section .price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--background-paper);
+}
+
+.pricing-section .price-row span:last-child {
+    font-weight: bold;
+}
+
+.policy-section {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    white-space: pre-line;
+}
+
+.policy-section h4 {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+/* --- Bottom Remarks --- */
+.remarks-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--divider);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}

@@ -116,5 +116,26 @@
             "title": "Car Repair Services",
             "content": "Our certified mechanics provide comprehensive car repair and maintenance services. From routine oil changes and brake inspections to major engine repairs, we use state-of-the-art diagnostic equipment to ensure your vehicle is running safely and efficiently."
         }
+    },
+    "carDetailPage": {
+        "carNotFound": "Car not found",
+        "bookNow": "Book Now",
+        "enquiry": "Enquiry",
+        "pickupLocation": "Pickup Location",
+        "fuelPolicy": "Fuel Policy",
+        "fuelPolicyText": "Return with same level",
+        "otherSupport": "Other Support",
+        "supportClean": "Cleaned and disinfected before rental",
+        "supportLicenseFee": "No need to bear license fees",
+        "supportInsurance": "No need to bear insurance costs",
+        "supportDashcam": "Dashcam included",
+        "supportAccessories": "Phone holder, charging cable",
+        "depositPolicy": "Deposit Policy",
+        "depositPolicyFullLicense": "Full License & 25 years or older:\nDaily/Weekly: $20,000,\nMonthly: $22,000",
+        "depositPolicyPLicense": "P License or under 25 years:\nDaily/Weekly: $30,000,\nMonthly: $32,000",
+        "remarks": "Remarks",
+        "remarksText": "Note: For any pending traffic tickets, it generally takes one to two months from the rental period for the ticket to be issued. Therefore, the deposit will be refunded after 60 days if there are no other miscellaneous fees or tickets.",
+        "transmissionAuto": "Automatic",
+        "transmissionManual": "Manual"
     }
 }

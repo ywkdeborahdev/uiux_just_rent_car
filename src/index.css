@@ -21,6 +21,8 @@
   --background-paper: #F2F4F5;
   --divider: #d0d2d3;
   --error-main: #ff7800;
+  --cta-main: #2489DD;
+  --cta-secondary: #1c6db0
 }
 
 body {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './SearchBanner.css'; // We will create this next
+import './SearchBanner.css';
 import SearchBannerImg from '../../assets/SearchBanner.png';
 
 
