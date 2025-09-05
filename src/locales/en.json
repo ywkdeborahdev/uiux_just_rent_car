@@ -1,5 +1,6 @@
 {
     "header": {
+        "companyName": "GoodWayPass",
         "carRental": "Car Rental",
         "otherServices": "Other Services",
         "contactUs": "Contact Us",

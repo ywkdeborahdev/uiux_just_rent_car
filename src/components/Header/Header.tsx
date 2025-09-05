@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, t }) => {
         <header className="main-header" style={headerStyle}>
             <div className="container">
                 <nav className="title-nav">
-                    <Link to='/' className="logo">JUST RENT</Link>
+                    <Link to='/' className="logo">{t('header.companyName')}</Link>
                 </nav>
                 <nav className="main-nav">
                     <Link to='/'>{t('header.carRental')}</Link>
