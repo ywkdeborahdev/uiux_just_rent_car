@@ -307,9 +307,19 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
                                 {t('bookingPage.prevStep')}
                             </button>
                         )}
+                        {currentStep === 3 ?
+                            <button onClick={handleNextStep} className="submit-button">
+                                {t('bookingPage.submit')}
+                            </button>
+                            :
+                            <button onClick={handleNextStep} className="next-step-button">
+                                {t('bookingPage.nextStep')}
+                            </button>
+                        }
+                        {/* 
                         <button onClick={handleNextStep} className="next-step-button">
-                            {currentStep === 3 ? t('bookingPage.submit') : t('bookingPage.nextStep')}
-                        </button>
+                            {t('bookingPage.submit')}
+                        </button> */}
                     </div>
                 </div>
             </div>

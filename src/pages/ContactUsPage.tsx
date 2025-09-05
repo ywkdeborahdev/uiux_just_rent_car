@@ -150,7 +150,9 @@ const ContactUsPage: React.FC<ContactUsPageProps> = ({ t }) => {
                             <textarea id="enquiry" value={formData.enquiry} onChange={handleChange}></textarea>
                             {errors.enquiry && <p className="error-text-contact">{errors.enquiry}</p>}
                         </div>
-                        <button type="submit" className="submit-button">{t('contactUsPage.submitButton')}</button>
+                        <div className="submit-btn-container">
+                            <button type="submit" className="submit-button">{t('contactUsPage.submitButton')}</button>
+                        </div>
                     </form>
                 </div>
             </div>

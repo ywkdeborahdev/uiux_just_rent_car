@@ -8,9 +8,6 @@ import * as bcrypt from 'bcrypt-ts';
 import { members } from '../data/memberData';
 import { useAuth } from '../context/AuthContext';
 
-
-const saltRounds = import.meta.env.VITE_SALT_ROUNDS;
-
 type LoginPageProps = {
     t: (key: string) => string;
 };
@@ -18,18 +15,35 @@ type LoginPageProps = {
 const LoginPage: React.FC<LoginPageProps> = ({ t }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    // State to hold any login error messages
-    const [error, setError] = useState<string | null>(null);
+    const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    const [authError, setAuthError] = useState<string | null>(null);
 
     const navigate = useNavigate();
     const { login } = useAuth();
 
-    const handleLogin = async (event: React.FormEvent) => {
-        event.preventDefault(); // Prevent the form from reloading the page
-        // console.log('Logging in with:', { username, password, hashedPassword });
-        setError(null); // Reset error on new submission
+    const validate = () => {
+        const newErrors: { [key: string]: string } = {};
+        if (!username) {
+            newErrors.username = t('registerPage.errors.required');
+        }
+        if (!password) {
+            newErrors.password = t('registerPage.errors.required');
+        }
+        return newErrors;
+    };
 
-        // Find a member that matches both username and password
+    const handleLogin = async (event: React.FormEvent) => {
+        event.preventDefault();
+        setAuthError(null);
+
+        const validationErrors = validate();
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            return;
+        }
+
+        setErrors({});
+
         const foundMember = members.find(
             (member) => member.username === username
         );
@@ -40,15 +54,29 @@ const LoginPage: React.FC<LoginPageProps> = ({ t }) => {
         }
 
         if (foundMember && isMatch) {
-            // --- SUCCESSFUL LOGIN ---
-            // In a real app, you'd set user context or a token here
             login(foundMember);
-            navigate('/'); // Redirect to the main page
+            navigate('/');
         } else {
-            // --- FAILED LOGIN ---
-            setError('loginPage.errorMessage');
+            setAuthError('loginPage.errorMessage');
+        }
+    };
+
+    // --- NEW HANDLER TO CLEAR ERRORS ON INPUT ---
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { id, value } = e.target;
+
+        if (id === 'username') {
+            setUsername(value);
+        } else if (id === 'password') {
+            setPassword(value);
         }
 
+        // If there was an error for this field, clear it
+        if (errors[id]) {
+            const newErrors = { ...errors };
+            delete newErrors[id];
+            setErrors(newErrors);
+        }
     };
 
 
@@ -57,17 +85,19 @@ const LoginPage: React.FC<LoginPageProps> = ({ t }) => {
             <RegularBanner />
 
             <div className="login-container">
-                <form className="login-form" onSubmit={handleLogin}>
+                <form className="login-form" onSubmit={handleLogin} noValidate>
                     <h2>{t('loginPage.formTitle')}</h2>
+                    {authError && <p className="error-message">{t(authError)}</p>}
+
                     <div className="input-group">
                         <label htmlFor="username">{t('loginPage.usernameLabel')}</label>
                         <input
                             id="username"
                             type="text"
                             value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
+                            onChange={handleChange}
                         />
+                        {errors.username && <p className="error-text-login">{errors.username}</p>}
                     </div>
 
                     <div className="input-group">
@@ -76,13 +106,10 @@ const LoginPage: React.FC<LoginPageProps> = ({ t }) => {
                             id="password"
                             type="password"
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
+                            onChange={handleChange}
                         />
+                        {errors.password && <p className="error-text-login">{errors.password}</p>}
                     </div>
-
-                    {/* Display error message if it exists */}
-                    {error && <p className="error-message">{t(error)}</p>}
 
                     <button type="submit" className="login-button">
                         {t('loginPage.buttonText')}
@@ -99,3 +126,4 @@ const LoginPage: React.FC<LoginPageProps> = ({ t }) => {
 };
 
 export default LoginPage;
+

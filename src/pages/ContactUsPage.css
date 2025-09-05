@@ -75,7 +75,7 @@
 /* --- Form Styles (Updated) --- */
 .contact-form-panel {
     flex: 1.5;
-    min-width: 400px;
+    /* min-width: 400px; */
 }
 
 .contact-form-panel h2 {
@@ -143,10 +143,7 @@
 
 .phone-input-group input {
     border-radius: 0 4px 4px 0;
-    /* --- CHANGES START HERE --- */
-    width: 100%;
-    /* Allow the input to fill the remaining space */
-    /* --- CHANGES END HERE --- */
+    width: 380px;
 }
 
 .error-text-contact {
@@ -156,6 +153,12 @@
     /* Aligns with the start of the input fields */
     color: #D32F2F;
     font-size: 0.8rem;
+}
+
+
+.submit-btn-container {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .submit-button {
