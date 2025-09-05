@@ -16,6 +16,7 @@ type BookingStep3Props = {
     errors: { [key: string]: string };
     handlePaymentChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     handlePaymentBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
+    handlePaymentFocus: (e: React.FocusEvent<HTMLInputElement>) => void;
 };
 
 const BookingStep3: React.FC<BookingStep3Props> = ({ car, t, contactData, bookingDetails, paymentData, totalPrice, errors, handlePaymentChange, handlePaymentBlur }) => {
@@ -79,18 +80,18 @@ const BookingStep3: React.FC<BookingStep3Props> = ({ car, t, contactData, bookin
                         </div>
                         <div className="payment-input-group">
                             <label htmlFor="cardNumber">{t('bookingPage.step3.cardLabel')}</label>
-                            <input type="text" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx" />
+                            <input type="text" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx" onChange={handlePaymentChange} onBlur={handlePaymentBlur} />
                             {errors.cardNumber && <p className="error-text-payment">{errors.cardNumber}</p>}
                         </div>
                         <div className="payment-input-row">
                             <div className="payment-input-group">
                                 <label htmlFor="expiryDate">{t('bookingPage.step3.expiryLabel')}</label>
-                                <input type="text" id="expiryDate" placeholder="MM / YY" />
+                                <input type="text" id="expiryDate" placeholder="MM / YY" onChange={handlePaymentChange} onBlur={handlePaymentBlur} />
                                 {errors.expiryDate && <p className="error-text-payment">{errors.expiryDate}</p>}
                             </div>
                             <div className="payment-input-group">
                                 <label htmlFor="cvc">{t('bookingPage.step3.cvcLabel')}</label>
-                                <input type="text" id="cvc" placeholder="XXX" />
+                                <input type="text" id="cvc" placeholder="XXX" onChange={handlePaymentChange} onBlur={handlePaymentBlur} />
                                 {errors.cvc && <p className="error-text-payment">{errors.cvc}</p>}
                             </div>
                         </div>

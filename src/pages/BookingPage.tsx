@@ -174,22 +174,24 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
     const handlePaymentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let { id, value } = e.target;
 
-        if (id === 'cardNumber') {
-            value = value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ');
-        }
-
+        if (id === 'cardNumber') value = value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ').trim();
         if (id === 'expiryDate') {
             value = value.replace(/\D/g, '');
-            if (value.length > 2) {
-                value = `${value.slice(0, 2)} / ${value.slice(2, 4)}`;
-            }
+            if (value.length > 2) value = `${value.slice(0, 2)} / ${value.slice(2, 4)}`;
         }
+        if (id === 'cvc') value = value.replace(/\D/g, '');
 
         const newPaymentData = { ...paymentData, [id]: value };
         setPaymentData(newPaymentData);
+    };
 
-        const onTheFlyErrors = validateStep3(newPaymentData, false);
-        setErrors(prev => ({ ...prev, [id]: onTheFlyErrors[id] }));
+    const handlePaymentFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+        const { id } = e.target;
+        if (errors[id]) {
+            const newErrors = { ...errors };
+            delete newErrors[id];
+            setErrors(newErrors);
+        }
     };
 
     const handlePaymentBlur = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -200,25 +202,25 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { id, value } = e.target;
-
         if (id === 'pLicense') {
             const { checked } = e.target as HTMLInputElement;
             setBookingDetails(prev => ({ ...prev, pLicense: checked }));
         } else if (id === "other") {
             setBookingDetails(prev => ({ ...prev, other: value }));
-        }
-        else {
+        } else {
             const newFormData = { ...contactData, [id]: value };
             setContactData(newFormData);
-            const onTheFlyErrors = validate(newFormData);
-            setErrors(prev => ({ ...prev, [id]: onTheFlyErrors[id] }));
+            if (errors[id]) {
+                const newErrors = { ...errors };
+                delete newErrors[id];
+                setErrors(newErrors);
+            }
         }
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        const { id } = e.target;
         const onBlurErrors = validate(contactData);
-        setErrors(prev => ({ ...prev, [id]: onBlurErrors[id] }))
+        setErrors(prev => ({ ...prev, ...onBlurErrors }));
     };
 
     const handleNextStep = () => {
@@ -295,6 +297,7 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
                             errors={errors}
                             handlePaymentChange={handlePaymentChange}
                             handlePaymentBlur={handlePaymentBlur}
+                            handlePaymentFocus={handlePaymentFocus}
                         />
                     )}
 
