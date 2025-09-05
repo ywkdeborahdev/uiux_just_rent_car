@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, t }) => {
                     </button>
                     <text> | </text>
                     <button
-                        className="lang-switch"
+                        className="lang-switch lang-english"
                         onClick={() => setLanguage('English')}
                         disabled={language === 'English'} // Disable if current language is English
                     >

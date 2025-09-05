@@ -49,10 +49,14 @@
     border: 1px solid #fff;
     padding: 0.2rem 0.6rem;
     border-radius: 10px;
-    margin-left: 0.5rem;
+    margin-left: 1.5rem;
     font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.main-nav .lang-english {
+    margin-left: 0rem;
 }
 
 .main-nav .lang-switch:hover {
