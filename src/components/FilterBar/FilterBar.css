@@ -1,4 +1,27 @@
+/* .filter-bar-container {
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.filter-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+} */
+
 .filter-bar-container {
+    /* --- New Properties for Sticky Effect --- */
+    position: sticky;
+    /* This value should match the height of your sticky header (approx. 52px) */
+    top: 52px;
+    z-index: 990;
+    /* Sits below the main header (1000) but above the content */
+    background-color: var(--background-paper);
+    /* Prevents content from showing through */
+
+    /* --- Existing Properties --- */
     padding: 1.5rem 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
