@@ -24,10 +24,10 @@ const LoginPage: React.FC<LoginPageProps> = ({ t }) => {
     const validate = () => {
         const newErrors: { [key: string]: string } = {};
         if (!username) {
-            newErrors.username = t('registerPage.errors.required');
+            newErrors.username = 'registerPage.errors.required';
         }
         if (!password) {
-            newErrors.password = t('registerPage.errors.required');
+            newErrors.password = 'registerPage.errors.required';
         }
         return newErrors;
     };
@@ -97,7 +97,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ t }) => {
                             value={username}
                             onChange={handleChange}
                         />
-                        {errors.username && <p className="error-text-login">{errors.username}</p>}
+                        {errors.username && <p className="error-text-login">{t(errors.username)}</p>}
                     </div>
 
                     <div className="input-group">
@@ -108,7 +108,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ t }) => {
                             value={password}
                             onChange={handleChange}
                         />
-                        {errors.password && <p className="error-text-login">{errors.password}</p>}
+                        {errors.password && <p className="error-text-login">{t(errors.password)}</p>}
                     </div>
 
                     <button type="submit" className="login-button">
