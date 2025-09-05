@@ -24,7 +24,11 @@
     background-color: var(--background-paper);
     font-size: 1rem;
     color: var(--text-primary);
-    width: 380px;
+    width: 400px;
+}
+
+.code-input {
+    width: 100px;
 }
 
 /* Error text positioning for the main phone input */

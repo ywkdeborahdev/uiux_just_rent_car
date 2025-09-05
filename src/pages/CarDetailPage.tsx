@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import CarDetailBanner from '../components/CarDetailBanner/CarDetailBanner';
 import { cars } from '../data/carData';
 import './CarDetailPage.css';
@@ -16,6 +16,7 @@ type CarDetailPageProps = {
 
 const CarDetailPage: React.FC<CarDetailPageProps> = ({ t }) => {
     const { carId } = useParams<{ carId: string }>();
+    const navigate = useNavigate();
     const car = cars.find(c => c.id === parseInt(carId || ''));
 
     if (!car) {
@@ -36,6 +37,10 @@ const CarDetailPage: React.FC<CarDetailPageProps> = ({ t }) => {
     const translatedLocations = car.location
         .map(locKey => t(`mainPage.carList.locations.${locKey}`))
         .join(' | ');
+
+    const handleBookNow = () => {
+        navigate(`/booking/${car.id}`);
+    };
 
     return (
         <div>
@@ -77,7 +82,7 @@ const CarDetailPage: React.FC<CarDetailPageProps> = ({ t }) => {
                                 </div>
                             </div>
                             <div className="car-detail-actions">
-                                <button className="book-now-btn">{t('carDetailPage.bookNow')}</button>
+                                <button onClick={handleBookNow} className="book-now-btn">{t('carDetailPage.bookNow')}</button>
                                 <Link to="/contact-us" className="enquiry-btn">{t('carDetailPage.enquiry')}</Link>
                             </div>
                         </div>

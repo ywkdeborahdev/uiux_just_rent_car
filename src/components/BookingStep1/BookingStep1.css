@@ -1,0 +1,28 @@
+.booking-step {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.booking-step-title {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.booking-step-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.booking-step-subtitle a {
+    color: var(--secondary-main);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.booking-step-subtitle a:hover {
+    text-decoration: underline;
+}

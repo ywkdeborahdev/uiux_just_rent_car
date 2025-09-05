@@ -1,5 +1,5 @@
 import React, { type Dispatch, type SetStateAction } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css'; // Make sure this path is correct
 import { justRentColors } from '../../theme/colorScheme';
 import { useAuth } from '../../context/AuthContext';
@@ -18,11 +18,19 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, t }) => {
     };
 
     const { currentUser, logout } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate('/message', { state: { message: 'messagePage.LogoutSuccess' } });
+    }
 
     return (
         <header className="main-header" style={headerStyle}>
             <div className="container">
-                <h1 className="logo">JUST RENT</h1>
+                <nav className="title-nav">
+                    <Link to='/' className="logo">JUST RENT</Link>
+                </nav>
                 <nav className="main-nav">
                     <Link to='/'>{t('header.carRental')}</Link>
                     <Link to='/services'>{t('header.otherServices')}</Link>
@@ -47,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, t }) => {
                         currentUser ? (
                             <>
                                 <span className="welcome-message">{t('header.Welcome')}, {currentUser.username}</span>
-                                <button onClick={logout} className="logout-btn">{t('header.logout')}</button>
+                                <button onClick={handleLogout} className="logout-btn">{t('header.logout')}</button>
                             </>
                         ) : (
                             <Link to='/login' className="login-btn">{t('header.login')}</Link>

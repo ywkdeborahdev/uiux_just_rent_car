@@ -3,15 +3,20 @@ import { Link } from 'react-router-dom';
 import './CarListItem.css';
 import { type Car } from '../../data/carData';
 
+
 type CarListItemProps = {
     car: Car;
     t: (key: string) => string;
 };
 
+
+
 const CarListItem: React.FC<CarListItemProps> = ({ car, t }) => {
     const translatedLocations = car.location
         .map(locKey => t(`mainPage.carList.locations.${locKey}`))
         .join(' | ');
+
+
     return (
         <Link to={`/car/${car.id}`} className="car-list-item-link">
             <div className="car-list-item">
@@ -30,7 +35,7 @@ const CarListItem: React.FC<CarListItemProps> = ({ car, t }) => {
                         <span>|</span>
                         <span>{car.doors} {t('mainPage.carList.doors')}</span>
                         <span>|</span>
-                        <span>{car.transmission}</span>
+                        <span>{car.transmission === 'Automatic' ? t('mainPage.carList.Automatic') : t('mainPage.carList.Manual')}</span>
                     </div>
                 </div>
                 <div className="car-pricing">

@@ -41,7 +41,9 @@
                 "airport": "機場",
                 "kwunTong": "觀塘",
                 "westKowloon": "西九龍"
-            }
+            },
+            "Automatic": "自動波",
+            "Manual": "手動波"
         },
         "priceFilter": {
             "selectRentalType": "請選擇租賃方式",
@@ -84,7 +86,8 @@
     "messagePage": {
         "title": "成功！",
         "defaultMessage": "操作已成功完成。",
-        "continueButton": "繼續前往主頁"
+        "continueButton": "繼續前往主頁",
+        "LogoutSuccess": "你已成功登出。"
     },
     "contactUsPage": {
         "leftTitle": "我們的資訊",
@@ -115,7 +118,8 @@
         "carRepair": {
             "title": "汽車維修服務",
             "content": "我們的認證技師提供全面的汽車維修和保養服務。從例行的更換機油和剎車檢查到重大的引擎維修，我們使用最先進的診斷設備，確保您的車輛安全高效地運行。"
-        }
+        },
+        "enquiry": "查詢"
     },
     "carDetailPage": {
         "carNotFound": "找不到車輛",
@@ -137,5 +141,58 @@
         "remarksText": "若有違例停車等告票，一般會於租車期後約一至兩個月收到，所以車行確認沒有告票後會退還剩餘押金。60日後無其他雜費或告票將會退回所有餘數。",
         "transmissionAuto": "自動波",
         "transmissionManual": "手動波"
+    },
+    "bookingPage": {
+        "contactInfo": {
+            "title": "聯絡資料",
+            "subtitle": {
+                "prefix": "老顧客？請先",
+                "login": "登入",
+                "or": "，或",
+                "register": "登記成會員",
+                "suffix": "已獲取最佳優惠！"
+            },
+            "nameLabel": "訪客姓名",
+            "emailLabel": "電郵",
+            "phoneLabel": "電話"
+        },
+        "step2": {
+            "title": "確認資料",
+            "subtitle": "請確認以下您的聯絡資料。",
+            "formTitle": "預定資料",
+            "carLabel": "租借車輛",
+            "datesLabel": "租車日期",
+            "locationLabel": "提車地點",
+            "pLicenseLabel": "是否持有P牌",
+            "otherLabel": "其他",
+            "pricingTitle": "價格詳情",
+            "rentalDays": "租借天數",
+            "days": "日",
+            "rentalFee": "租借費用",
+            "deposit": "按金",
+            "total": "總計"
+        },
+        "step3": {
+            "title": "確認並付款",
+            "contactLabel": "聯絡資料",
+            "yes": "是",
+            "no": "否",
+            "paymentTitle": "付款方式",
+            "cardholderLabel": "持卡人姓名",
+            "cardLabel": "卡號",
+            "expiryLabel": "到期日",
+            "cvcLabel": "CVC",
+            "totalFee": "收款總計："
+        },
+        "nextStep": "下一步",
+        "prevStep": "上一步",
+        "submit": "提交預訂",
+        "success": "您的預訂已成功確認！",
+        "errors": {
+            "invalidDate": "請選擇有效的日期範圍。",
+            "invalidCardNumber": "請輸入有效的信用卡號碼。",
+            "invalidExpiry": "請使用 MM / YY 格式。",
+            "expiredCard": "此卡已過期。"
+        }
     }
 }

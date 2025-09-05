@@ -41,7 +41,9 @@
                 "airport": "Airport",
                 "kwunTong": "Kwun Tong",
                 "westKowloon": "West Kowloon"
-            }
+            },
+            "Automatic": "Automatic",
+            "Manual": "Manual"
         },
         "priceFilter": {
             "selectRentalType": "Select Rental Type",
@@ -84,7 +86,8 @@
     "messagePage": {
         "title": "Success!",
         "defaultMessage": "Operation completed successfully.",
-        "continueButton": "Continue to Main Page"
+        "continueButton": "Continue to Main Page",
+        "LogoutSuccess": "You have been successfully logged out."
     },
     "contactUsPage": {
         "leftTitle": "Our Information",
@@ -115,7 +118,8 @@
         "carRepair": {
             "title": "Car Repair Services",
             "content": "Our certified mechanics provide comprehensive car repair and maintenance services. From routine oil changes and brake inspections to major engine repairs, we use state-of-the-art diagnostic equipment to ensure your vehicle is running safely and efficiently."
-        }
+        },
+        "enquiry": "Enquiry"
     },
     "carDetailPage": {
         "carNotFound": "Car not found",
@@ -137,5 +141,58 @@
         "remarksText": "Note: For any pending traffic tickets, it generally takes one to two months from the rental period for the ticket to be issued. Therefore, the deposit will be refunded after 60 days if there are no other miscellaneous fees or tickets.",
         "transmissionAuto": "Automatic",
         "transmissionManual": "Manual"
+    },
+    "bookingPage": {
+        "contactInfo": {
+            "title": "Contact Information",
+            "subtitle": {
+                "prefix": "Old customers please ",
+                "login": "log in",
+                "or": ", or ",
+                "register": "register as a member",
+                "suffix": " to get the best discount!"
+            },
+            "nameLabel": "Visitor Name",
+            "emailLabel": "Email",
+            "phoneLabel": "Phone"
+        },
+        "step2": {
+            "title": "Confirm Information",
+            "subtitle": "Please confirm your contact details below.",
+            "formTitle": "Booking Information",
+            "carLabel": "Rental Car",
+            "datesLabel": "Rental Dates",
+            "locationLabel": "Pickup",
+            "pLicenseLabel": "P License Holder",
+            "otherLabel": "Other",
+            "pricingTitle": "Pricing Details",
+            "rentalDays": "Rental Days",
+            "days": "Days",
+            "rentalFee": "Rental Fee",
+            "deposit": "Deposit",
+            "total": "Total"
+        },
+        "step3": {
+            "title": "Confirm and Pay",
+            "contactLabel": "Contact Info",
+            "yes": "Yes",
+            "no": "No",
+            "paymentTitle": "Payment Method",
+            "cardholderLabel": "Cardholder Name",
+            "cardLabel": "Card Number",
+            "expiryLabel": "Expiry Date",
+            "cvcLabel": "CVC",
+            "totalFee": "Total Fee:"
+        },
+        "nextStep": "Next Step",
+        "prevStep": "Previous Step",
+        "submit": "Submit Booking",
+        "success": "Your booking has been confirmed!",
+        "errors": {
+            "invalidDate": "Please select a valid date range.",
+            "invalidCardNumber": "Please enter a valid card number.",
+            "invalidExpiry": "Please use MM / YY format.",
+            "expiredCard": "This card has expired."
+        }
     }
 }

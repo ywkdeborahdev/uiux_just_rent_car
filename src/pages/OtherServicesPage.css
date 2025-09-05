@@ -62,3 +62,8 @@
     /* Adjust if your content is longer */
     transition: max-height 0.4s ease-in, padding 0.4s ease-in;
 }
+
+.enquiry-action {
+    display: flex;
+    justify-content: center;
+}

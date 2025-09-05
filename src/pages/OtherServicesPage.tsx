@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import RegularBanner from '../components/RegularBanner/RegularBanner';
 import './OtherServicesPage.css'; // Import the new CSS
 
@@ -51,6 +52,9 @@ const OtherServicesPage: React.FC<OtherServicesPageProps> = ({ t }) => {
                     title={t('otherServicesPage.carRepair.title')}
                     content={t('otherServicesPage.carRepair.content')}
                 />
+            </div>
+            <div className="enquiry-action">
+                <Link to="/contact-us" className="enquiry-btn">{t('otherServicesPage.enquiry')}</Link>
             </div>
         </div>
     );

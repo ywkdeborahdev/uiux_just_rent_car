@@ -65,13 +65,20 @@ const MainPage: React.FC<MainPageProps> = ({ t }) => {
 
     // 2. Wrap the handler function in useCallback
     // This ensures the function identity is stable across re-renders
-    const handleFilterChange = useCallback((filterName: keyof Filters, value: any) => {
+    // const handleFilterChange = useCallback((filterName: keyof Filters, value: any) => {
+    //     setFilters(prevFilters => ({
+    //         ...prevFilters,
+    //         [filterName]: value
+    //     }));
+    // }, []); // The empty dependency array means this function will never be re-created
+
+
+    const handleFilterChange = (filterName: keyof Filters, value: any) => {
         setFilters(prevFilters => ({
             ...prevFilters,
             [filterName]: value
         }));
-    }, []); // The empty dependency array means this function will never be re-created
-
+    };
     return (
         <div>
             <SearchBanner title={title} t={t} />

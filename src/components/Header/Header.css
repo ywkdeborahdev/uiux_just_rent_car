@@ -28,6 +28,14 @@
     margin-left: 0;
 }
 
+.title-nav a {
+    color: #577A7F;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
 .main-nav a {
     color: #577A7F;
     text-decoration: none;

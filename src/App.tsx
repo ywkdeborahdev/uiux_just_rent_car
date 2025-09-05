@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import MessagePage from './pages/MessagePage';
 import CarDetailPage from './pages/CarDetailPage';
+import BookingPage from './pages/BookingPage';
 import { useTranslation } from './hooks/useTranslation';
 import { AuthProvider } from './context/AuthContext';
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/register" element={<RegisterPage t={t} />} />
           <Route path="/message" element={<MessagePage t={t} />} />
           <Route path="/car/:carId" element={<CarDetailPage t={t} />} />
+          <Route path="/booking/:carId" element={<BookingPage t={t} />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

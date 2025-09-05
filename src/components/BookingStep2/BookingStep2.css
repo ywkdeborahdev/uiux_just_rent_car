@@ -1,0 +1,212 @@
+.booking-step-2-container {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.booking-step-2-content {
+    display: flex;
+    gap: 3rem;
+}
+
+.booking-details-panel {
+    flex: 2;
+}
+
+.detail-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.detail-row label {
+    width: 120px;
+    flex-shrink: 0;
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding-top: 0.5rem;
+}
+
+.car-info-display,
+.date-input-wrapper,
+.location-buttons,
+.detail-row textarea,
+.detail-row input[type="checkbox"] {
+    flex-grow: 1;
+}
+
+.car-info-display {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    padding-top: 0.5rem;
+}
+
+.car-specs-summary {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.car-specs-summary span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.date-input-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.date-input-wrapper input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.location-buttons {
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 0.2rem;
+}
+
+.location-btn {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    background-color: white;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.location-btn:hover {
+    background-color: var(--background-paper);
+}
+
+.location-btn.active {
+    background-color: var(--cta-main);
+    color: white;
+    border-color: var(--cta-main);
+}
+
+.detail-row textarea {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.detail-row input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+/* Pricing Panel */
+.pricing-summary-panel {
+    flex: 1;
+    background-color: var(--background-paper);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.pricing-summary-panel h4 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+
+.price-detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.price-detail-row span:last-child {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.price-detail-row.total span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.pricing-divider {
+    border: 0;
+    border-top: 1px solid var(--divider);
+    margin: 1.5rem 0;
+}
+
+.date-input-wrapper {
+    position: relative;
+}
+
+.date-picker-modal {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    background: white;
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.date-picker-close {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    background-color: var(--cta-main);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.checkbox-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding-top: 0.2rem;
+}
+
+.detail-row input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    /* margin: 0; */
+    padding-top: 20px;
+    flex-grow: 0;
+}
+
+.error-text-booking {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: #D32F2F;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}

@@ -1,0 +1,105 @@
+.booking-step-3-container {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.booking-step-3-content {
+    display: flex;
+    gap: 3rem;
+}
+
+/* Left Panel */
+.confirmation-panel {
+    flex: 1.5;
+}
+
+.conf-row {
+    display: flex;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.conf-label {
+    width: 120px;
+    flex-shrink: 0;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.conf-value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.conf-value.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.conf-value.other {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Right Panel */
+.payment-panel {
+    flex: 1;
+    background-color: var(--background-paper);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.payment-panel h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+
+.payment-methods-placeholder {
+    height: 40px;
+    /* Placeholder height */
+    background-color: #e0e0e0;
+    /* Placeholder color */
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    background-image: url('https://i.imgur.com/example-payment-methods.png');
+    /* Replace with your actual image URL */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.payment-input-group {
+    margin-bottom: 1rem;
+}
+
+.payment-input-group label {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.payment-input-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.payment-input-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.error-text-payment {
+    color: #D32F2F;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+}
