@@ -96,7 +96,7 @@ const BookingStep2: React.FC<BookingStep2Props> = ({ car, t, bookingDetails, onL
                                     />
                                 </div>
                             )}
-                            {errors.dateRange && <p className="error-text-booking">{errors.dateRange}</p>}
+                            {errors.dateRange && <p className="error-text-booking">{t(errors.dateRange)}</p>}
                         </div>
                     </div>
                     <div className="detail-row">

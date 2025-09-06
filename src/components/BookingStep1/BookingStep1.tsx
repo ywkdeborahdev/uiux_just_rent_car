@@ -41,6 +41,7 @@ const BookingStep1: React.FC<BookingStep1Props> = ({ formData, t, handleChange, 
                 handleBlur={handleBlur}
                 handleFocus={() => { }}
                 error={errors.name}
+                t={t}
             />
             <VerificationInput
                 label={t('bookingPage.contactInfo.emailLabel')}

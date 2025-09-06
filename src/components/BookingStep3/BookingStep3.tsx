@@ -76,23 +76,23 @@ const BookingStep3: React.FC<BookingStep3Props> = ({ car, t, contactData, bookin
                         <div className="payment-input-group">
                             <label htmlFor="cardholderName">{t('bookingPage.step3.cardholderLabel')}</label>
                             <input type="text" id="cardholderName" value={paymentData.cardholderName} onChange={handlePaymentChange} onBlur={handlePaymentBlur} />
-                            {errors.cardholderName && <p className="error-text-payment">{errors.cardholderName}</p>}
+                            {errors.cardholderName && <p className="error-text-payment">{t(errors.cardholderName)}</p>}
                         </div>
                         <div className="payment-input-group">
                             <label htmlFor="cardNumber">{t('bookingPage.step3.cardLabel')}</label>
                             <input type="text" id="cardNumber" placeholder="1234 1234 1234 1234" onChange={handlePaymentChange} onBlur={handlePaymentBlur} />
-                            {errors.cardNumber && <p className="error-text-payment">{errors.cardNumber}</p>}
+                            {errors.cardNumber && <p className="error-text-payment">{t(errors.cardNumber)}</p>}
                         </div>
                         <div className="payment-input-row">
                             <div className="payment-input-group">
                                 <label htmlFor="expiryDate">{t('bookingPage.step3.expiryLabel')}</label>
                                 <input type="text" id="expiryDate" placeholder="MM / YY" onChange={handlePaymentChange} onBlur={handlePaymentBlur} />
-                                {errors.expiryDate && <p className="error-text-payment">{errors.expiryDate}</p>}
+                                {errors.expiryDate && <p className="error-text-payment">{t(errors.expiryDate)}</p>}
                             </div>
                             <div className="payment-input-group">
                                 <label htmlFor="cvc">{t('bookingPage.step3.cvcLabel')}</label>
                                 <input type="text" id="cvc" placeholder="XXX" onChange={handlePaymentChange} onBlur={handlePaymentBlur} />
-                                {errors.cvc && <p className="error-text-payment">{errors.cvc}</p>}
+                                {errors.cvc && <p className="error-text-payment">{t(errors.cvc)}</p>}
                             </div>
                         </div>
                     </div>

@@ -10,9 +10,10 @@ type FormInputProps = {
     handleBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
     handleFocus: (e: React.FocusEvent<HTMLInputElement>) => void;
     error?: string;
+    t: (key: string) => string;
 };
 
-const FormInput: React.FC<FormInputProps> = ({ label, id, type, value, handleChange, handleBlur, handleFocus, error }) => {
+const FormInput: React.FC<FormInputProps> = ({ label, id, type, value, handleChange, handleBlur, handleFocus, error, t }) => {
     return (
         <div className="form-row">
             <label htmlFor={id}>{label}</label>
@@ -26,7 +27,8 @@ const FormInput: React.FC<FormInputProps> = ({ label, id, type, value, handleCha
                     onBlur={handleBlur}
                     onFocus={handleFocus}
                 />
-                {error && <p className="error-text">{error}</p>}
+
+                {error && <p className="error-text">{t(error)}</p>}
             </div>
         </div>
     );

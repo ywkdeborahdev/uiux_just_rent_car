@@ -45,7 +45,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ t }) => {
             ];
             requiredFields.forEach(field => {
                 if (!data[field]) {
-                    newErrors[field] = t('registerPage.errors.required');
+                    newErrors[field] = 'registerPage.errors.required';
                 }
             });
         }
@@ -53,23 +53,23 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ t }) => {
         if (data.email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
-                newErrors.email = t('registerPage.errors.invalidEmail');
+                newErrors.email = 'registerPage.errors.invalidEmail';
             }
         }
 
         if (data.emailCode && data.emailCode !== '000') {
-            newErrors.emailCode = t('registerPage.errors.invalidCode');
+            newErrors.emailCode = 'registerPage.errors.invalidCode';
         }
 
         if (data.phone) {
             const phoneRegex = /^[0-9]{8}$/;
             if (!phoneRegex.test(data.phone)) {
-                newErrors.phone = t('registerPage.errors.invalidPhone');
+                newErrors.phone = 'registerPage.errors.invalidPhone';
             }
         }
 
         if (data.phoneCode && data.phoneCode !== '000') {
-            newErrors.phoneCode = t('registerPage.errors.invalidCode');
+            newErrors.phoneCode = 'registerPage.errors.invalidCode';
         }
 
         return newErrors;
@@ -134,6 +134,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ t }) => {
                         handleBlur={() => { }}
                         handleFocus={() => { }}
                         error={errors.name}
+                        t={t}
                     />
                     <VerificationInput
                         label={t('registerPage.emailLabel')}
@@ -170,6 +171,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ t }) => {
                         handleBlur={() => { }}
                         handleFocus={() => { }}
                         error={errors.username}
+                        t={t}
                     />
                     <FormInput
                         label={t('registerPage.passwordLabel')}
@@ -180,6 +182,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ t }) => {
                         handleBlur={() => { }}
                         handleFocus={() => { }}
                         error={errors.password}
+                        t={t}
                     />
 
                     <div className="register-button-container">

@@ -32,13 +32,13 @@ const ContactUsPage: React.FC<ContactUsPageProps> = ({ t }) => {
         if (data.email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
-                newErrors.email = t('registerPage.errors.invalidEmail');
+                newErrors.email = 'registerPage.errors.invalidEmail';
             }
         }
         if (data.phone) {
             const phoneRegex = /^[0-9]{8}$/;
             if (!phoneRegex.test(data.phone)) {
-                newErrors.phone = t('registerPage.errors.invalidPhone');
+                newErrors.phone = 'registerPage.errors.invalidPhone';
             }
         }
 
@@ -47,7 +47,7 @@ const ContactUsPage: React.FC<ContactUsPageProps> = ({ t }) => {
             const requiredFields: (keyof typeof formData)[] = ['name', 'email', 'phone', 'enquiry'];
             requiredFields.forEach(field => {
                 if (!data[field]) {
-                    newErrors[field] = t('registerPage.errors.required');
+                    newErrors[field] = 'registerPage.errors.required';
                 }
             });
         }
@@ -126,12 +126,12 @@ const ContactUsPage: React.FC<ContactUsPageProps> = ({ t }) => {
                         <div className="form-row">
                             <label htmlFor="name">{t('contactUsPage.nameLabel')}</label>
                             <input type="text" id="name" value={formData.name} onChange={handleChange} />
-                            {errors.name && <p className="error-text-contact">{errors.name}</p>}
+                            {errors.name && <p className="error-text-contact">{t(errors.name)}</p>}
                         </div>
                         <div className="form-row">
                             <label htmlFor="email">{t('contactUsPage.emailLabel')}</label>
                             <input type="email" id="email" value={formData.email} onChange={handleChange} onBlur={handleBlur} />
-                            {errors.email && <p className="error-text-contact">{errors.email}</p>}
+                            {errors.email && <p className="error-text-contact">{t(errors.email)}</p>}
                         </div>
                         <div className="form-row">
                             <label htmlFor="phone">{t('contactUsPage.phoneLabel')}</label>
@@ -143,12 +143,12 @@ const ContactUsPage: React.FC<ContactUsPageProps> = ({ t }) => {
                                 </select>
                                 <input type="tel" id="phone" value={formData.phone} onChange={handleChange} onBlur={handleBlur} />
                             </div>
-                            {errors.phone && <p className="error-text-contact">{errors.phone}</p>}
+                            {errors.phone && <p className="error-text-contact">{t(errors.phone)}</p>}
                         </div>
                         <div className="form-row">
                             <label htmlFor="enquiry">{t('contactUsPage.enquiryLabel')}</label>
                             <textarea id="enquiry" value={formData.enquiry} onChange={handleChange}></textarea>
-                            {errors.enquiry && <p className="error-text-contact">{errors.enquiry}</p>}
+                            {errors.enquiry && <p className="error-text-contact">{t(errors.enquiry)}</p>}
                         </div>
                         <div className="submit-btn-container">
                             <button type="submit" className="submit-button">{t('contactUsPage.submitButton')}</button>

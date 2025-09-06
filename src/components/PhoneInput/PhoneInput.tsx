@@ -75,7 +75,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
                         onFocus={handleFocus}
                     />
                 </div>
-                {phoneError && <p className="error-text">{phoneError}</p>}
+                {phoneError && <p className="error-text">{t(phoneError)}</p>}
             </div>
             <div className="verification-group">
                 <button
@@ -99,7 +99,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
                         onFocus={handleFocus}
                         placeholder="000"
                     />
-                    {codeError && <p className="error-text code-error">{codeError}</p>}
+                    {codeError && <p className="error-text code-error">{t(codeError)}</p>}
                 </div>
             </div>
         </div>

@@ -97,7 +97,7 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
             }
 
             if (!(sum % 10 === 0 && cardNumber.length >= 13 && cardNumber.length <= 19)) {
-                newErrors.cardNumber = t('bookingPage.errors.invalidCardNumber');
+                newErrors.cardNumber = 'bookingPage.errors.invalidCardNumber';
             }
         }
 
@@ -105,11 +105,11 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
         if (data.expiryDate) {
             const [month, year] = data.expiryDate.split(' / ');
             if (!/^(0[1-9]|1[0-2]) \/ ([0-9]{2})$/.test(data.expiryDate) || !month || !year) {
-                newErrors.expiryDate = t('bookingPage.errors.invalidExpiry');
+                newErrors.expiryDate = 'bookingPage.errors.invalidExpiry';
             } else {
                 const expiry = new Date(parseInt(`20${year}`), parseInt(month), 0);
                 if (expiry < new Date()) {
-                    newErrors.expiryDate = t('bookingPage.errors.expiredCard');
+                    newErrors.expiryDate = 'bookingPage.errors.expiredCard';
                 }
             }
         }
@@ -117,7 +117,7 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
         if (checkAll) {
             const requiredFields: (keyof typeof paymentData)[] = ['cardholderName', 'cardNumber', 'expiryDate', 'cvc'];
             requiredFields.forEach(field => {
-                if (!data[field]) newErrors[field] = t('registerPage.errors.required');
+                if (!data[field]) newErrors[field] = 'registerPage.errors.required';
             });
         }
 
@@ -129,7 +129,7 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
         const { startDate, endDate } = bookingDetails.dateRange[0];
 
         if (!startDate || !endDate) {
-            newErrors.dateRange = t('bookingPage.errors.invalidDate');
+            newErrors.dateRange = 'bookingPage.errors.invalidDate';
         }
 
         return newErrors;
@@ -141,13 +141,13 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
         if (data.email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
-                newErrors.email = t('registerPage.errors.invalidEmail');
+                newErrors.email = 'registerPage.errors.invalidEmail';
             }
         }
         if (data.phone) {
             const phoneRegex = /^[0-9]{8}$/;
             if (!phoneRegex.test(data.phone)) {
-                newErrors.phone = t('registerPage.errors.invalidPhone');
+                newErrors.phone = 'registerPage.errors.invalidPhone';
             }
         }
 
@@ -155,17 +155,17 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
             const requiredFields: (keyof typeof contactData)[] = ['name', 'email', 'phone', 'emailCode', 'phoneCode'];
             requiredFields.forEach(field => {
                 if (!data[field]) {
-                    newErrors[field] = t('registerPage.errors.required');
+                    newErrors[field] = 'registerPage.errors.required';
                 }
             });
         }
 
         if (data.emailCode && data.emailCode !== '000') {
-            newErrors.emailCode = t('registerPage.errors.invalidCode');
+            newErrors.emailCode = 'registerPage.errors.invalidCode';
         }
 
         if (data.phoneCode && data.phoneCode !== '000') {
-            newErrors.phoneCode = t('registerPage.errors.invalidCode');
+            newErrors.phoneCode = 'registerPage.errors.invalidCode';
         }
 
         return newErrors;

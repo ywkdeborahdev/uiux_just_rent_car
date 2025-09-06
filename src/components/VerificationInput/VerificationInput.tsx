@@ -48,7 +48,7 @@ const VerificationInput: React.FC<VerificationInputProps> = ({ label, id, value,
                     onBlur={handleBlur}
                     onFocus={handleFocus}
                 />
-                {emailError && <p className="error-text">{emailError}</p>}
+                {emailError && <p className="error-text">{t(emailError)}</p>}
             </div>
             <div className="verification-group">
                 <button
@@ -72,7 +72,7 @@ const VerificationInput: React.FC<VerificationInputProps> = ({ label, id, value,
                         onFocus={handleFocus}
                         placeholder="000"
                     />
-                    {codeError && <p className="error-text code-error">{codeError}</p>}
+                    {codeError && <p className="error-text code-error">{t(codeError)}</p>}
                 </div>
             </div>
         </div>
