@@ -97,6 +97,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
                         onChange={handleChange}
                         onBlur={handleBlur}
                         onFocus={handleFocus}
+                        placeholder="000"
                     />
                     {codeError && <p className="error-text code-error">{codeError}</p>}
                 </div>

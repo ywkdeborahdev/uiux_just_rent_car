@@ -70,6 +70,7 @@ const VerificationInput: React.FC<VerificationInputProps> = ({ label, id, value,
                         onChange={handleChange}
                         onBlur={handleBlur}
                         onFocus={handleFocus}
+                        placeholder="000"
                     />
                     {codeError && <p className="error-text code-error">{codeError}</p>}
                 </div>

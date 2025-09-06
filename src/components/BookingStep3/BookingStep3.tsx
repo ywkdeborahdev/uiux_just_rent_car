@@ -80,7 +80,7 @@ const BookingStep3: React.FC<BookingStep3Props> = ({ car, t, contactData, bookin
                         </div>
                         <div className="payment-input-group">
                             <label htmlFor="cardNumber">{t('bookingPage.step3.cardLabel')}</label>
-                            <input type="text" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx" onChange={handlePaymentChange} onBlur={handlePaymentBlur} />
+                            <input type="text" id="cardNumber" placeholder="1234 1234 1234 1234" onChange={handlePaymentChange} onBlur={handlePaymentBlur} />
                             {errors.cardNumber && <p className="error-text-payment">{errors.cardNumber}</p>}
                         </div>
                         <div className="payment-input-row">

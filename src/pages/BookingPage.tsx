@@ -302,11 +302,11 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
                     )}
 
                     <div className="booking-navigation">
-                        {(currentStep == 2 && !currentUser) || currentStep == 3 && (
+                        {((currentStep == 2 && !currentUser) || currentStep == 3) ? (
                             <button onClick={handlePreviousStep} className="prev-step-button">
                                 {t('bookingPage.prevStep')}
                             </button>
-                        )}
+                        ) : null}
                         {currentStep === 3 ?
                             <button onClick={handleNextStep} className="submit-button">
                                 {t('bookingPage.submit')}
