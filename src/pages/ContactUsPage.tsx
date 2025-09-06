@@ -65,7 +65,7 @@ const ContactUsPage: React.FC<ContactUsPageProps> = ({ t }) => {
         setErrors(prev => ({ ...prev, [id]: onTheFlyErrors[id] }));
     };
 
-    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    const handleBlur = () => {
         // The handleChange already handles validation, but you can keep this
         // if you want to ensure validation runs specifically on blur.
         const onBlurErrors = validate(formData);

@@ -26,19 +26,6 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ icon, label, t, onChange }) =
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, [filterRef]);
 
-    const reportChange = (
-        currentRentalType: Filters['price']['rentalType'],
-        currentMin: string,
-        currentMax: string
-    ) => {
-        onChange({
-            rentalType: currentRentalType,
-            min: currentMin ? parseInt(currentMin) : 0,
-            max: currentMax ? parseInt(currentMax) : Infinity,
-        });
-    };
-
-
     const handleRentalTypeChange = (type: Filters['price']['rentalType']) => {
         setRentalType(type);
         onChange({

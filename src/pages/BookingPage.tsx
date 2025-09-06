@@ -218,7 +218,7 @@ const BookingPage: React.FC<BookingPageProps> = ({ t }) => {
         }
     };
 
-    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    const handleBlur = () => {
         const onBlurErrors = validate(contactData);
         setErrors(prev => ({ ...prev, ...onBlurErrors }));
     };

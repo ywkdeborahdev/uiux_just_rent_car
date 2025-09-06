@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'; // 1. Import useCallback
+import React, { useState, useEffect } from 'react'; // 1. Import useCallback
 import SearchBanner from '../components/SearchBanner/SearchBanner';
 import FilterBar from '../components/FilterBar/FilterBar';
 import CarList from '../components/CarList/CarList';
